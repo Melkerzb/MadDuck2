@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Spikes.gd" type="Script" id=1]
+[ext_resource path="res://PNG/Spikes1.png" type="Texture" id=2]
+
+[node name="Spikes" type="Area2D" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." index="1"]
+
+position = Vector2( 8, 8 )
+build_mode = 0
+polygon = PoolVector2Array( -7.43358, 8.01152, -7.43358, 4.98572, -4.95792, -3.00476, -3.00185, -3.00476, -1.01521, 2.03824, 1.03256, 2.03824, 3.04976, -3.00476, 5.00583, -3.00476, 7.35922, 5.07741, 7.35922, 8.04208 )
+_sections_unfolded = [ "Transform" ]
+
+
