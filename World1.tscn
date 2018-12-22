@@ -10,7 +10,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 312, 8 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
 [node name="Duck" parent="." index="0" instance=ExtResource( 1 )]
 
