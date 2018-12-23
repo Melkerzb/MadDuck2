@@ -50,7 +50,6 @@ __meta__ = {
 
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 1
 playing = true
 centered = false
 
@@ -62,7 +61,8 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Camera2D" type="Camera2D" parent="." index="2"]
 
-position = Vector2( 0, -10 )
+position = Vector2( 0, -16 )
+offset = Vector2( 0, -77 )
 anchor_mode = 1
 rotating = false
 current = true

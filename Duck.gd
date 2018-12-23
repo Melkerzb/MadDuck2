@@ -2,10 +2,11 @@ extends KinematicBody2D
 
 
 var velocity = Vector2()
+var speed_mult = 1
 const MAXSPEED = 150
 const JUMP_HEIGHT = -350
 const GRAVITY = 1500
-
+const LEFT_SHIFT = 16777237
 
 
 func _physics_process(delta):
@@ -16,14 +17,20 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_up"):
 			velocity.y = JUMP_HEIGHT
 	
+	#Sprint
+	if Input.is_key_pressed(LEFT_SHIFT):
+		speed_mult = 3
+	else:
+		speed_mult = 1
+	
 	#Movement
 	if Input.is_action_pressed("ui_right"):
-		velocity.x = MAXSPEED
+		velocity.x = MAXSPEED*speed_mult
 		$Sprite.flip_h = false
 		$Sprite.play("Run")
 	
 	elif Input.is_action_pressed("ui_left"):
-		velocity.x = -MAXSPEED
+		velocity.x = -MAXSPEED*speed_mult
 		$Sprite.flip_h = true
 		$Sprite.play("Run")
 
